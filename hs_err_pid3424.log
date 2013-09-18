@@ -1,0 +1,1225 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fbbbb3cff10, pid=3424, tid=140444294579968
+#
+# JRE version: 7.0-b147
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (21.0-b17 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# V  [libjvm.so+0x7d0f10]  Symbol::as_klass_external_name() const+0x10
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fbbb4008800):  JavaThread "main" [_thread_in_vm, id=3433, stack(0x00007fbbbc3a0000,0x00007fbbbc4a1000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=128 (), si_addr=0x0000000000000000
+
+Registers:
+RAX=0x00007fbbbb46ecbb, RBX=0x00007fbbb4008800, RCX=0x0000000000000000, RDX=0x00000000c0a00048
+RSP=0x00007fbbbc483810, RBP=0x00007fbbbc483830, RSI=0x00000000fb171a50, RDI=0xc0a005c8c0a00e98
+R8 =0x0000000000000007, R9 =0x0000000000000006, R10=0x00007fbbbb87e4e0, R11=0x0000000000000021
+R12=0x00007fbbb4006370, R13=0xc0a005c8c0a00e98, R14=0x00007fbbbc483980, R15=0x00007fbbb40094e8
+RIP=0x00007fbbbb3cff10, EFLAGS=0x0000000000010202, CSGSFS=0x0000000000000033, ERR=0x0000000000000000
+  TRAPNO=0x000000000000000d
+
+Top of Stack: (sp=0x00007fbbbc483810)
+0x00007fbbbc483810:   00007fbbb1005f98 00007fbbb4008800
+0x00007fbbbc483820:   00007fbbb4006370 00000000c0a00058
+0x00007fbbbc483830:   00007fbbbc483890 00007fbbbb1fc345
+0x00007fbbbc483840:   00000000c065bf30 00007fbbbc483890
+0x00007fbbbc483850:   00000000c065f680 00000000c18c8f80
+0x00007fbbbc483860:   00000000c065bf40 0000000000000000
+0x00007fbbbc483870:   00007fbbb4008800 00007fbbb4006370
+0x00007fbbbc483880:   00007fbbb4009100 00007fbbbc483980
+0x00007fbbbc483890:   00007fbbbc4838f0 00007fbbbb10a5c3
+0x00007fbbbc4838a0:   00000000c0b0bc78 00007fbbb4009110
+0x00007fbbbc4838b0:   00007fbbb4008800 00000000c186c000
+0x00007fbbbc4838c0:   00000000c0b0bcc8 00000000c0a00048
+0x00007fbbbc4838d0:   0000000000000000 00000000c0b0b920
+0x00007fbbbc4838e0:   00007fbbbc483980 00007fbbb4008800
+0x00007fbbbc4838f0:   00007fbbbc483948 00007fbbb101000d
+0x00007fbbbc483900:   00007fbbb100ffcb 00007fbbbc483908
+0x00007fbbbc483910:   00000000c0b0b920 00007fbbbc483980
+0x00007fbbbc483920:   00000000c0b0e960 00000000c186b920
+0x00007fbbbc483930:   00000000c0b0ba40 0000000000000000
+0x00007fbbbc483940:   00007fbbbc483970 00007fbbbc4839c8
+0x00007fbbbc483950:   00007fbbb1006173 00000000f7e21c60
+0x00007fbbbc483960:   00000000fb2425e0 00000000f7e21c08
+0x00007fbbbc483970:   00000000fb1dab60 00000000fb0b04a8
+0x00007fbbbc483980:   00000000f7e21890 00007fbbbc483988
+0x00007fbbbc483990:   00000000c0b0be24 00007fbbbc483a20
+0x00007fbbbc4839a0:   00000000c0b0e960 00000000c1473710
+0x00007fbbbc4839b0:   00000000c0b0bf58 00007fbbbc483970
+0x00007fbbbc4839c0:   00007fbbbc483a10 00007fbbbc483a68
+0x00007fbbbc4839d0:   00007fbbb1006173 0000000000000000
+0x00007fbbbc4839e0:   0000000000000000 0000000000000000
+0x00007fbbbc4839f0:   00000000fb0b04a8 0000000000000000
+0x00007fbbbc483a00:   00000000f7e21bd0 00000000f7e21938 
+
+Instructions: (pc=0x00007fbbbb3cff10)
+0x00007fbbbb3cfef0:   24 08 c9 c3 66 66 66 2e 0f 1f 84 00 00 00 00 00
+0x00007fbbbb3cff00:   55 48 89 e5 41 55 49 89 fd 41 54 53 48 83 ec 08
+0x00007fbbbb3cff10:   0f b7 5f 08 8d 7b 01 48 63 ff e8 21 09 fa ff 49
+0x00007fbbbb3cff20:   89 c4 41 0f b7 45 08 89 df 39 d8 0f 4e f8 85 ff 
+
+Register to memory mapping:
+
+RAX=0x00007fbbbb46ecbb: <offset 0x86fcbb> in /opt/jdk1.7.0/jre/lib/amd64/server/libjvm.so at 0x00007fbbbabff000
+RBX=0x00007fbbb4008800 is a thread
+RCX=0x0000000000000000 is an unknown value
+RDX=0x00000000c0a00048 is an oop
+[[I 
+ - klass: 'java/lang/Object'[]
+ - length: 54
+RSP=0x00007fbbbc483810 is pointing into the stack for thread: 0x00007fbbb4008800
+RBP=0x00007fbbbc483830 is pointing into the stack for thread: 0x00007fbbb4008800
+RSI=0x00000000fb171a50 is an unknown value
+RDI=0xc0a005c8c0a00e98 is an unknown value
+R8 =0x0000000000000007 is an unknown value
+R9 =0x0000000000000006 is an unknown value
+R10=0x00007fbbbb87e4e0: <offset 0xc7f4e0> in /opt/jdk1.7.0/jre/lib/amd64/server/libjvm.so at 0x00007fbbbabff000
+R11=0x0000000000000021 is an unknown value
+R12=0x00007fbbb4006370 is an unknown value
+R13=0xc0a005c8c0a00e98 is an unknown value
+R14=0x00007fbbbc483980 is pointing into the stack for thread: 0x00007fbbb4008800
+R15=0x00007fbbb40094e8 is an unknown value
+
+
+Stack: [0x00007fbbbc3a0000,0x00007fbbbc4a1000],  sp=0x00007fbbbc483810,  free space=910k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x7d0f10]  Symbol::as_klass_external_name() const+0x10
+V  [libjvm.so+0x5fd345]  Klass::external_name() const+0x105
+V  [libjvm.so+0x50b5c3]  InterpreterRuntime::throw_ClassCastException(JavaThread*, oopDesc*)+0x73
+j  org.codehaus.groovy.classgen.VariableScopeVisitor.findClassMember(Lorg/codehaus/groovy/ast/ClassNode;Ljava/lang/String;)Lorg/codehaus/groovy/ast/Variable;+96
+j  org.codehaus.groovy.classgen.VariableScopeVisitor.checkVariableNameForDeclaration(Ljava/lang/String;Lorg/codehaus/groovy/ast/expr/Expression;)Lorg/codehaus/groovy/ast/Variable;+140
+j  org.codehaus.groovy.classgen.VariableScopeVisitor.visitVariableExpression(Lorg/codehaus/groovy/ast/expr/VariableExpression;)V+8
+J  org.codehaus.groovy.ast.expr.VariableExpression.visit(Lorg/codehaus/groovy/ast/GroovyCodeVisitor;)V
+j  org.codehaus.groovy.classgen.VariableScopeVisitor.visitMethodCallExpression(Lorg/codehaus/groovy/ast/expr/MethodCallExpression;)V+153
+j  org.codehaus.groovy.ast.expr.MethodCallExpression.visit(Lorg/codehaus/groovy/ast/GroovyCodeVisitor;)V+2
+j  org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitField(Lorg/codehaus/groovy/ast/FieldNode;)V+16
+j  org.codehaus.groovy.classgen.VariableScopeVisitor.visitField(Lorg/codehaus/groovy/ast/FieldNode;)V+10
+j  org.codehaus.groovy.ast.ClassNode.visitContents(Lorg/codehaus/groovy/ast/GroovyClassVisitor;)V+70
+j  org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitClass(Lorg/codehaus/groovy/ast/ClassNode;)V+23
+j  org.codehaus.groovy.classgen.VariableScopeVisitor.visitClass(Lorg/codehaus/groovy/ast/ClassNode;)V+31
+j  org.codehaus.groovy.tools.javac.JavaAwareCompilationUnit$1.call(Lorg/codehaus/groovy/control/SourceUnit;Lorg/codehaus/groovy/classgen/GeneratorContext;Lorg/codehaus/groovy/ast/ClassNode;)V+28
+j  org.codehaus.groovy.control.CompilationUnit.applyToPrimaryClassNodes(Lorg/codehaus/groovy/control/CompilationUnit$PrimaryClassNodeOperation;)V+129
+j  org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(Ljava/lang/Object;)V+12
+j  org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(I)V+32
+j  org.codehaus.groovy.control.CompilationUnit.compile(I)V+60
+j  org.codehaus.groovy.control.CompilationUnit.compile()V+3
+j  org.codehaus.groovy.tools.FileSystemCompiler.compile([Ljava/lang/String;)V+12
+j  org.codehaus.groovy.tools.FileSystemCompiler.doCompilation(Lorg/codehaus/groovy/control/CompilerConfiguration;Lorg/codehaus/groovy/control/CompilationUnit;[Ljava/lang/String;Z)V+161
+j  org.codehaus.groovy.ant.Groovyc.runCompiler([Ljava/lang/String;)V+151
+j  org.codehaus.groovy.ant.Groovyc.compile()V+207
+j  org.codehaus.groovy.grails.compiler.Grailsc.compile()V+43
+j  org.codehaus.groovy.ant.Groovyc.execute()V+159
+j  org.apache.tools.ant.UnknownElement.execute()V+58
+j  sun.reflect.GeneratedMethodAccessor68.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+36
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.codehaus.groovy.classgen.VariableScopeVisitor.findClassMember(Lorg/codehaus/groovy/ast/ClassNode;Ljava/lang/String;)Lorg/codehaus/groovy/ast/Variable;+96
+j  org.codehaus.groovy.classgen.VariableScopeVisitor.checkVariableNameForDeclaration(Ljava/lang/String;Lorg/codehaus/groovy/ast/expr/Expression;)Lorg/codehaus/groovy/ast/Variable;+140
+j  org.codehaus.groovy.classgen.VariableScopeVisitor.visitVariableExpression(Lorg/codehaus/groovy/ast/expr/VariableExpression;)V+8
+J  org.codehaus.groovy.ast.expr.VariableExpression.visit(Lorg/codehaus/groovy/ast/GroovyCodeVisitor;)V
+j  org.codehaus.groovy.ast.CodeVisitorSupport.visitMethodCallExpression(Lorg/codehaus/groovy/ast/expr/MethodCallExpression;)V+5
+j  org.codehaus.groovy.classgen.VariableScopeVisitor.visitMethodCallExpression(Lorg/codehaus/groovy/ast/expr/MethodCallExpression;)V+153
+j  org.codehaus.groovy.ast.expr.MethodCallExpression.visit(Lorg/codehaus/groovy/ast/GroovyCodeVisitor;)V+2
+j  org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitField(Lorg/codehaus/groovy/ast/FieldNode;)V+16
+j  org.codehaus.groovy.classgen.VariableScopeVisitor.visitField(Lorg/codehaus/groovy/ast/FieldNode;)V+10
+j  org.codehaus.groovy.ast.ClassNode.visitContents(Lorg/codehaus/groovy/ast/GroovyClassVisitor;)V+70
+j  org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitClass(Lorg/codehaus/groovy/ast/ClassNode;)V+23
+j  org.codehaus.groovy.classgen.VariableScopeVisitor.visitClass(Lorg/codehaus/groovy/ast/ClassNode;)V+31
+j  org.codehaus.groovy.tools.javac.JavaAwareCompilationUnit$1.call(Lorg/codehaus/groovy/control/SourceUnit;Lorg/codehaus/groovy/classgen/GeneratorContext;Lorg/codehaus/groovy/ast/ClassNode;)V+28
+j  org.codehaus.groovy.control.CompilationUnit.applyToPrimaryClassNodes(Lorg/codehaus/groovy/control/CompilationUnit$PrimaryClassNodeOperation;)V+129
+j  org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(Ljava/lang/Object;)V+12
+j  org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(I)V+32
+j  org.codehaus.groovy.control.CompilationUnit.compile(I)V+60
+j  org.codehaus.groovy.control.CompilationUnit.compile()V+3
+j  org.codehaus.groovy.tools.FileSystemCompiler.compile([Ljava/lang/String;)V+12
+j  org.codehaus.groovy.tools.FileSystemCompiler.doCompilation(Lorg/codehaus/groovy/control/CompilerConfiguration;Lorg/codehaus/groovy/control/CompilationUnit;[Ljava/lang/String;Z)V+161
+j  org.codehaus.groovy.ant.Groovyc.runCompiler([Ljava/lang/String;)V+151
+j  org.codehaus.groovy.ant.Groovyc.compile()V+207
+j  org.codehaus.groovy.grails.compiler.Grailsc.compile()V+43
+j  org.codehaus.groovy.ant.Groovyc.execute()V+159
+j  org.apache.tools.ant.UnknownElement.execute()V+58
+j  sun.reflect.GeneratedMethodAccessor68.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+36
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.apache.tools.ant.dispatch.DispatchUtils.execute(Ljava/lang/Object;)V+518
+j  groovy.util.AntBuilder.performTask(Lorg/apache/tools/ant/Task;)Ljava/lang/Object;+66
+j  groovy.util.AntBuilder.nodeCompleted(Ljava/lang/Object;Ljava/lang/Object;)V+195
+j  groovy.util.BuilderSupport.doInvokeMethod(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+540
+j  groovy.util.AntBuilder.doInvokeMethod(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+4
+j  groovy.util.BuilderSupport.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.codehaus.gant.GantBuilder.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+298
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+74
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(Lorg/codehaus/groovy/runtime/callsite/CallSite;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+8
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  org.codehaus.groovy.grails.compiler.GrailsProjectCompiler.compilePluginSources(Lorg/codehaus/groovy/grails/plugins/build/scopes/PluginScopeInfo;Ljava/lang/Object;)Ljava/lang/Object;+180
+j  org.codehaus.groovy.grails.compiler.GrailsProjectCompiler.this$2$compilePluginSources(Lorg/codehaus/groovy/grails/plugins/build/scopes/PluginScopeInfo;Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.grails.compiler.GrailsProjectCompiler$this$2$compilePluginSources.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+22
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(Lorg/codehaus/groovy/runtime/callsite/CallSite;Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+17
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  org.codehaus.groovy.grails.compiler.GrailsProjectCompiler.compilePlugins(Ljava/lang/Object;)V+473
+j  org.codehaus.groovy.grails.compiler.GrailsProjectCompiler$compilePlugins$0.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+16
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(Lorg/codehaus/groovy/runtime/callsite/CallSite;Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+17
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.groovy.grails.compiler.GrailsProjectCompiler.compilePlugins()V+14
+j  org.codehaus.groovy.grails.compiler.GrailsProjectCompiler$compilePlugins.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+13
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(Lorg/codehaus/groovy/runtime/callsite/CallSite;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+8
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;)Ljava/lang/Object;+5
+j  _GrailsCompile_groovy$_run_closure3_closure8_closure9.doCall(Ljava/lang/Object;)Ljava/lang/Object;+18
+j  _GrailsCompile_groovy$_run_closure3_closure8_closure9.doCall()Ljava/lang/Object;+6
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(Lorg/codehaus/groovy/runtime/callsite/CallSite;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+8
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;)Ljava/lang/Object;+5
+j  _GrailsCompile_groovy.withCompilationErrorHandling(Lgroovy/lang/Closure;)Ljava/lang/Object;+9
+j  _GrailsCompile_groovy.this$4$withCompilationErrorHandling(Lgroovy/lang/Closure;)Ljava/lang/Object;+2
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+J  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+799
+J  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.DelegatingMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+7
+j  org.codehaus.gant.GantMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+111
+j  org.codehaus.gant.GantMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+52
+j  groovy.lang.GroovyObjectSupport.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+893
+J  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(Lorg/codehaus/groovy/runtime/callsite/CallSite;Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+17
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  _GrailsCompile_groovy$_run_closure3_closure8.doCall(Ljava/lang/Object;)Ljava/lang/Object;+21
+j  _GrailsCompile_groovy$_run_closure3_closure8.doCall()Ljava/lang/Object;+6
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.Closure.call([Ljava/lang/Object;)Ljava/lang/Object;+8
+j  groovy.lang.Closure.call()Ljava/lang/Object;+6
+j  org.codehaus.groovy.grails.cli.api.BaseSettingsApi.profile(Ljava/lang/String;Lgroovy/lang/Closure;)V+105
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+243
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokePropertyOrMissing(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+140
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1089
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+56
+j  groovy.lang.GroovyObjectSupport.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  groovy.lang.Script.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+3
+j  groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+893
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.DelegatingMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+7
+j  org.codehaus.gant.GantMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+111
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(Lorg/codehaus/groovy/runtime/callsite/CallSite;Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+17
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  _GrailsCompile_groovy$_run_closure3.doCall(Ljava/lang/Object;)Ljava/lang/Object;+90
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.DelegatingMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+7
+j  org.codehaus.gant.GantMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+111
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(Lorg/codehaus/groovy/runtime/callsite/CallSite;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+8
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+91
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(Ljava/lang/Object;)Ljava/lang/Object;+22
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall()Ljava/lang/Object;+16
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;)Ljava/lang/Object;+5
+j  org.codehaus.gant.GantBinding.withTargetEvent(Ljava/lang/Object;Ljava/lang/Object;Lgroovy/lang/Closure;)Ljava/lang/Object;+157
+j  org.codehaus.gant.GantBinding.this$4$withTargetEvent(Ljava/lang/Object;Ljava/lang/Object;Lgroovy/lang/Closure;)Ljava/lang/Object;+4
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+799
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+56
+j  groovy.lang.GroovyObjectSupport.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+893
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+9
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(Ljava/lang/Object;)Ljava/lang/Object;+157
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall()Ljava/lang/Object;+16
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.Closure.call([Ljava/lang/Object;)Ljava/lang/Object;+8
+j  groovy.lang.Closure.call()Ljava/lang/Object;+6
+j  org.codehaus.gant.GantMetaClass.processClosure(Lgroovy/lang/Closure;)Ljava/lang/Object;+23
+j  org.codehaus.gant.GantMetaClass.processArgument(Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.gant.GantMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+93
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(Lorg/codehaus/groovy/runtime/callsite/CallSite;Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+17
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  _GrailsCompile_groovy$_run_closure2.doCall(Ljava/lang/Object;)Ljava/lang/Object;+19
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.DelegatingMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+7
+j  org.codehaus.gant.GantMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+111
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(Lorg/codehaus/groovy/runtime/callsite/CallSite;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+8
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+91
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(Ljava/lang/Object;)Ljava/lang/Object;+22
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall()Ljava/lang/Object;+16
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;)Ljava/lang/Object;+5
+j  org.codehaus.gant.GantBinding.withTargetEvent(Ljava/lang/Object;Ljava/lang/Object;Lgroovy/lang/Closure;)Ljava/lang/Object;+157
+j  org.codehaus.gant.GantBinding.this$4$withTargetEvent(Ljava/lang/Object;Ljava/lang/Object;Lgroovy/lang/Closure;)Ljava/lang/Object;+4
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+799
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+56
+j  groovy.lang.GroovyObjectSupport.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+893
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+9
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(Ljava/lang/Object;)Ljava/lang/Object;+157
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall()Ljava/lang/Object;+16
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokePropertyOrMissing(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+140
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1089
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+56
+j  groovy.lang.GroovyObjectSupport.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  groovy.lang.Script.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+3
+j  groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+893
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.DelegatingMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+7
+j  org.codehaus.gant.GantMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+111
+j  org.codehaus.gant.GantMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+52
+j  groovy.lang.GroovyObjectSupport.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+893
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(Lorg/codehaus/groovy/runtime/callsite/CallSite;Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+17
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;)Ljava/lang/Object;+5
+j  _GrailsPackage_groovy$_run_closure2_closure9.doCall(Ljava/lang/Object;)Ljava/lang/Object;+9
+j  _GrailsPackage_groovy$_run_closure2_closure9.doCall()Ljava/lang/Object;+6
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.Closure.call([Ljava/lang/Object;)Ljava/lang/Object;+8
+j  groovy.lang.Closure.call()Ljava/lang/Object;+6
+j  org.codehaus.groovy.grails.cli.api.BaseSettingsApi.profile(Ljava/lang/String;Lgroovy/lang/Closure;)V+105
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+243
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokePropertyOrMissing(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+140
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1089
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+56
+j  groovy.lang.GroovyObjectSupport.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  groovy.lang.Script.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+3
+j  groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+893
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.DelegatingMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+7
+j  org.codehaus.gant.GantMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+111
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(Lorg/codehaus/groovy/runtime/callsite/CallSite;Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+17
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  _GrailsPackage_groovy$_run_closure2.doCall(Ljava/lang/Object;)Ljava/lang/Object;+66
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.DelegatingMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+7
+j  org.codehaus.gant.GantMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+111
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(Lorg/codehaus/groovy/runtime/callsite/CallSite;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+8
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+91
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(Ljava/lang/Object;)Ljava/lang/Object;+22
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall()Ljava/lang/Object;+16
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;)Ljava/lang/Object;+5
+j  org.codehaus.gant.GantBinding.withTargetEvent(Ljava/lang/Object;Ljava/lang/Object;Lgroovy/lang/Closure;)Ljava/lang/Object;+157
+j  org.codehaus.gant.GantBinding.this$4$withTargetEvent(Ljava/lang/Object;Ljava/lang/Object;Lgroovy/lang/Closure;)Ljava/lang/Object;+4
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+799
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+56
+j  groovy.lang.GroovyObjectSupport.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+893
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+9
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(Ljava/lang/Object;)Ljava/lang/Object;+157
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall()Ljava/lang/Object;+16
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.Closure.call([Ljava/lang/Object;)Ljava/lang/Object;+8
+j  groovy.lang.Closure.call()Ljava/lang/Object;+6
+j  org.codehaus.gant.GantMetaClass.processClosure(Lgroovy/lang/Closure;)Ljava/lang/Object;+23
+j  org.codehaus.gant.GantMetaClass.processArgument(Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.gant.GantMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+93
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(Lorg/codehaus/groovy/runtime/callsite/CallSite;Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+17
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+11
+j  RunApp$_run_closure1.doCall(Ljava/lang/Object;)Ljava/lang/Object;+49
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.DelegatingMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+7
+j  org.codehaus.gant.GantMetaClass.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+111
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(Lorg/codehaus/groovy/runtime/callsite/CallSite;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+8
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+91
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(Ljava/lang/Object;)Ljava/lang/Object;+22
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall()Ljava/lang/Object;+16
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;)Ljava/lang/Object;+5
+j  org.codehaus.gant.GantBinding.withTargetEvent(Ljava/lang/Object;Ljava/lang/Object;Lgroovy/lang/Closure;)Ljava/lang/Object;+157
+j  org.codehaus.gant.GantBinding.this$4$withTargetEvent(Ljava/lang/Object;Ljava/lang/Object;Lgroovy/lang/Closure;)Ljava/lang/Object;+4
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+799
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+56
+j  groovy.lang.GroovyObjectSupport.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+893
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+9
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(Ljava/lang/Object;)Ljava/lang/Object;+157
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall()Ljava/lang/Object;+16
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;)Ljava/lang/Object;+5
+j  gant.Gant$_dispatch_closure5.doCall(Ljava/lang/Object;)Ljava/lang/Object;+69
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  gant.Gant$_dispatch_closure7.doCall(Ljava/lang/Object;)Ljava/lang/Object;+22
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  gant.Gant$_dispatch_closure7.doCall()Ljava/lang/Object;+16
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;)Ljava/lang/Object;+5
+j  gant.Gant.withBuildListeners(Lgroovy/lang/Closure;)Ljava/lang/Object;+125
+j  gant.Gant.this$2$withBuildListeners(Lgroovy/lang/Closure;)Ljava/lang/Object;+2
+j  gant.Gant$this$2$withBuildListeners.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(Lorg/codehaus/groovy/runtime/callsite/CallSite;Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+17
+j  gant.Gant$this$2$withBuildListeners.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+27
+j  gant.Gant.dispatch(Ljava/util/List;)Ljava/lang/Integer;+575
+j  gant.Gant.this$2$dispatch(Ljava/util/List;)Ljava/lang/Integer;+2
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+1076
+j  groovy.lang.ExpandoMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object;+44
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+71
+j  gant.Gant.invokeMethod(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  groovy.lang.GroovyObject$invokeMethod.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+22
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(Lorg/codehaus/groovy/runtime/callsite/CallSite;Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+17
+j  groovy.lang.GroovyObject$invokeMethod.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+32
+j  gant.Gant.executeTargets(Ljava/lang/String;Ljava/util/List;)Ljava/lang/Integer;+12
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(Lorg/codehaus/groovy/runtime/callsite/CallSite;Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+17
+j  org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object;+25
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+7
+j  gant.Gant.executeTargets()Ljava/lang/Integer;+32
+j  org.codehaus.groovy.grails.cli.GrailsScriptRunner.executeWithGantInstance(Lgant/Gant;Lgroovy/lang/Closure;Lorg/codehaus/gant/GantBinding;)Lorg/codehaus/groovy/grails/cli/GrailsScriptRunner$GantResult;+32
+j  org.codehaus.groovy.grails.cli.GrailsScriptRunner.executeScriptFile(Lorg/codehaus/groovy/grails/cli/parsing/CommandLine;Ljava/lang/String;Ljava/lang/String;Lorg/codehaus/gant/GantBinding;Ljava/io/File;)I+111
+j  org.codehaus.groovy.grails.cli.GrailsScriptRunner.executeScriptWithCaching(Lorg/codehaus/groovy/grails/cli/parsing/CommandLine;Ljava/lang/String;Ljava/lang/String;)I+277
+j  org.codehaus.groovy.grails.cli.GrailsScriptRunner.executeScriptWithCaching(Lorg/codehaus/groovy/grails/cli/parsing/CommandLine;)I+34
+j  org.codehaus.groovy.grails.cli.GrailsScriptRunner$executeScriptWithCaching.call(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+17
+j  org.codehaus.groovy.grails.cli.interactive.InteractiveMode.parseAndExecute(Ljava/lang/String;)V+61
+j  org.codehaus.groovy.grails.cli.interactive.InteractiveMode$parseAndExecute.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object;+17
+j  org.codehaus.groovy.grails.cli.interactive.InteractiveMode.run()V+664
+j  org.codehaus.groovy.grails.cli.GrailsScriptRunner.main([Ljava/lang/String;)V+544
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+57
+j  org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+1972
+j  org.codehaus.groovy.grails.cli.support.GrailsStarter.rootLoader([Ljava/lang/String;)V+1246
+j  org.codehaus.groovy.grails.cli.support.GrailsStarter.main([Ljava/lang/String;)V+1
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fbbb4437000 JavaThread "process reaper" daemon [_thread_blocked, id=3448, stack(0x00007fbbb0685000,0x00007fbbb069f000)]
+  0x00007fbbb4174800 JavaThread "Service Thread" daemon [_thread_blocked, id=3444, stack(0x00007fbbb8036000,0x00007fbbb8137000)]
+  0x00007fbbb4163800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=3443, stack(0x00007fbbb8137000,0x00007fbbb8238000)]
+  0x00007fbbb416b000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=3442, stack(0x00007fbbb8238000,0x00007fbbb8339000)]
+  0x00007fbbb4107000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3441, stack(0x00007fbbb8399000,0x00007fbbb849a000)]
+  0x00007fbbb40bd800 JavaThread "Finalizer" daemon [_thread_blocked, id=3440, stack(0x00007fbbb849a000,0x00007fbbb859b000)]
+  0x00007fbbb40bb000 JavaThread "Reference Handler" daemon [_thread_blocked, id=3439, stack(0x00007fbbb859b000,0x00007fbbb869c000)]
+=>0x00007fbbb4008800 JavaThread "main" [_thread_in_vm, id=3433, stack(0x00007fbbbc3a0000,0x00007fbbbc4a1000)]
+
+Other Threads:
+  0x00007fbbb40b3800 VMThread [stack: 0x00007fbbb869c000,0x00007fbbb879d000] [id=3438]
+  0x00007fbbb4187000 WatcherThread [stack: 0x00007fbbb081e000,0x00007fbbb091f000] [id=3445]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 183296K, used 150797K [0x00000000f0000000, 0x00000000fe3e0000, 0x0000000100000000)
+  eden space 162624K, 80% used [0x00000000f0000000,0x00000000f7f14050,0x00000000f9ed0000)
+  from space 20672K, 99% used [0x00000000f9ed0000,0x00000000fb2ff5d8,0x00000000fb300000)
+  to   space 24576K, 0% used [0x00000000fcbe0000,0x00000000fcbe0000,0x00000000fe3e0000)
+ PSOldGen        total 83840K, used 26254K [0x00000000d0000000, 0x00000000d51e0000, 0x00000000f0000000)
+  object space 83840K, 31% used [0x00000000d0000000,0x00000000d19a3900,0x00000000d51e0000)
+ PSPermGen       total 32768K, used 25398K [0x00000000c0000000, 0x00000000c2000000, 0x00000000d0000000)
+  object space 32768K, 77% used [0x00000000c0000000,0x00000000c18cd9d8,0x00000000c2000000)
+
+Code Cache  [0x00007fbbb1000000, 0x00007fbbb14c0000, 0x00007fbbb4000000)
+ total_blobs=1381 nmethods=850 adapters=482 free_code_cache=44394Kb largest_free_block=45364800
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:06 3939875                            /opt/jdk1.7.0/bin/java
+00600000-00601000 rw-p 00000000 08:06 3939875                            /opt/jdk1.7.0/bin/java
+014d1000-014f2000 rw-p 00000000 00:00 0                                  [heap]
+c0000000-c2000000 rw-p 00000000 00:00 0 
+c2000000-d0000000 rw-p 00000000 00:00 0 
+d0000000-d51e0000 rw-p 00000000 00:00 0 
+d51e0000-d9a40000 ---p 00000000 00:00 0 
+d9a40000-f0000000 rw-p 00000000 00:00 0 
+f0000000-fe3e0000 rw-p 00000000 00:00 0 
+fe3e0000-100000000 rw-p 00000000 00:00 0 
+7fbb74000000-7fbb74021000 rw-p 00000000 00:00 0 
+7fbb74021000-7fbb78000000 ---p 00000000 00:00 0 
+7fbb78000000-7fbb78aec000 rw-p 00000000 00:00 0 
+7fbb78aec000-7fbb7c000000 ---p 00000000 00:00 0 
+7fbb7c000000-7fbb7c021000 rw-p 00000000 00:00 0 
+7fbb7c021000-7fbb80000000 ---p 00000000 00:00 0 
+7fbb80000000-7fbb80021000 rw-p 00000000 00:00 0 
+7fbb80021000-7fbb84000000 ---p 00000000 00:00 0 
+7fbb84000000-7fbb87e05000 rw-p 00000000 00:00 0 
+7fbb87e05000-7fbb88000000 ---p 00000000 00:00 0 
+7fbb88000000-7fbb8bff9000 rw-p 00000000 00:00 0 
+7fbb8bff9000-7fbb8c000000 ---p 00000000 00:00 0 
+7fbb8c000000-7fbb8c021000 rw-p 00000000 00:00 0 
+7fbb8c021000-7fbb90000000 ---p 00000000 00:00 0 
+7fbb90000000-7fbb90021000 rw-p 00000000 00:00 0 
+7fbb90021000-7fbb94000000 ---p 00000000 00:00 0 
+7fbb94000000-7fbb94021000 rw-p 00000000 00:00 0 
+7fbb94021000-7fbb98000000 ---p 00000000 00:00 0 
+7fbb98000000-7fbb98021000 rw-p 00000000 00:00 0 
+7fbb98021000-7fbb9c000000 ---p 00000000 00:00 0 
+7fbb9c000000-7fbb9c021000 rw-p 00000000 00:00 0 
+7fbb9c021000-7fbba0000000 ---p 00000000 00:00 0 
+7fbba3dea000-7fbba3dff000 r-xp 00000000 08:06 3940750                    /opt/jdk1.7.0/jre/lib/amd64/libnet.so
+7fbba3dff000-7fbba3fff000 ---p 00015000 08:06 3940750                    /opt/jdk1.7.0/jre/lib/amd64/libnet.so
+7fbba3fff000-7fbba4000000 rw-p 00015000 08:06 3940750                    /opt/jdk1.7.0/jre/lib/amd64/libnet.so
+7fbba4000000-7fbba402e000 rw-p 00000000 00:00 0 
+7fbba402e000-7fbba8000000 ---p 00000000 00:00 0 
+7fbba8000000-7fbba8021000 rw-p 00000000 00:00 0 
+7fbba8021000-7fbbac000000 ---p 00000000 00:00 0 
+7fbbac000000-7fbbac021000 rw-p 00000000 00:00 0 
+7fbbac021000-7fbbb0000000 ---p 00000000 00:00 0 
+7fbbb001c000-7fbbb002c000 r-xp 00000000 08:06 3940755                    /opt/jdk1.7.0/jre/lib/amd64/libnio.so
+7fbbb002c000-7fbbb022c000 ---p 00010000 08:06 3940755                    /opt/jdk1.7.0/jre/lib/amd64/libnio.so
+7fbbb022c000-7fbbb022d000 rw-p 00010000 08:06 3940755                    /opt/jdk1.7.0/jre/lib/amd64/libnio.so
+7fbbb0353000-7fbbb0356000 r--s 00013000 08:05 5375071                    /home/arpit-singhal/.grails/ivy-cache/org.grails.plugins/database-migration/zips/database-migration-1.2.1.zip
+7fbbb0356000-7fbbb0359000 r--s 00012000 08:05 5375069                    /home/arpit-singhal/.grails/ivy-cache/org.grails.plugins/resources/zips/resources-1.1.6.zip
+7fbbb0359000-7fbbb035b000 r--s 0002e000 08:05 5375067                    /home/arpit-singhal/.grails/ivy-cache/org.grails.plugins/jquery/zips/jquery-1.8.3.zip
+7fbbb035b000-7fbbb035c000 r--s 00001000 08:05 5381016                    /home/arpit-singhal/.grails/ivy-cache/org.grails.plugins/hibernate/zips/hibernate-2.2.3.zip
+7fbbb035c000-7fbbb035d000 r--s 00002000 08:05 5375063                    /home/arpit-singhal/.grails/ivy-cache/org.grails.plugins/webxml/zips/webxml-1.4.1.zip
+7fbbb035d000-7fbbb035f000 r--s 0000f000 08:05 5375061                    /home/arpit-singhal/.grails/ivy-cache/org.grails.plugins/cache/zips/cache-1.0.1.zip
+7fbbb035f000-7fbbb0360000 r--s 00000000 08:05 5381009                    /home/arpit-singhal/.grails/ivy-cache/org.grails.plugins/tomcat/zips/tomcat-2.2.3.zip
+7fbbb0360000-7fbbb0362000 r--s 00005000 08:05 3149295                    /home/arpit-singhal/.grails/ivy-cache/org.grails.plugins/mail/zips/mail-1.0.1.zip
+7fbbb0362000-7fbbb0367000 r--s 00034000 08:05 5252556                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-test/jars/spring-test-3.1.4.RELEASE.jar
+7fbbb0367000-7fbbb036b000 r--s 0002a000 08:05 5252555                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-test/jars/grails-test-2.2.3.jar
+7fbbb036b000-7fbbb0372000 r--s 00061000 08:05 5252554                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-testing/jars/grails-plugin-testing-2.2.3.jar
+7fbbb0372000-7fbbb0379000 r--s 00037000 08:05 5248243                    /home/arpit-singhal/.grails/ivy-cache/junit/junit/jars/junit-4.10.jar
+7fbbb0379000-7fbbb037b000 r--s 0000e000 08:05 3149303                    /home/arpit-singhal/.grails/ivy-cache/javax.activation/activation/jars/activation-1.1.jar
+7fbbb037b000-7fbbb0382000 r--s 0006a000 08:05 3149301                    /home/arpit-singhal/.grails/ivy-cache/javax.mail/mail/jars/mail-1.4.3.jar
+7fbbb0382000-7fbbb0393000 r--s 000d2000 08:05 5375089                    /home/arpit-singhal/.grails/ivy-cache/org.liquibase/liquibase-core/jars/liquibase-core-2.0.5.jar
+7fbbb0393000-7fbbb039c000 r--s 00098000 08:05 5375087                    /home/arpit-singhal/.grails/ivy-cache/org.javassist/javassist/jars/javassist-3.16.1-GA.jar
+7fbbb039c000-7fbbb03a1000 r--s 00068000 08:05 5375085                    /home/arpit-singhal/.grails/ivy-cache/antlr/antlr/jars/antlr-2.7.7.jar
+7fbbb03a1000-7fbbb03a2000 r--s 00002000 08:05 5375081                    /home/arpit-singhal/.grails/ivy-cache/org.hibernate/hibernate-ehcache/jars/hibernate-ehcache-3.6.10.Final.jar
+7fbbb03a2000-7fbbb03a7000 r--s 00048000 08:05 5375083                    /home/arpit-singhal/.grails/ivy-cache/dom4j/dom4j/jars/dom4j-1.6.1.jar
+7fbbb03a7000-7fbbb03d9000 r--s 002c9000 08:05 5375075                    /home/arpit-singhal/.grails/ivy-cache/org.hibernate/hibernate-core/jars/hibernate-core-3.6.10.Final.jar
+7fbbb03d9000-7fbbb03dc000 r--s 0000f000 08:05 5375073                    /home/arpit-singhal/.grails/ivy-cache/org.hibernate/hibernate-commons-annotations/jars/hibernate-commons-annotations-3.2.0.Final.jar
+7fbbb03dc000-7fbbb03df000 r--s 00009000 08:05 5375079                    /home/arpit-singhal/.grails/ivy-cache/javax.validation/validation-api/jars/validation-api-1.0.0.GA.jar
+7fbbb03df000-7fbbb03e6000 r--s 00040000 08:05 5375077                    /home/arpit-singhal/.grails/ivy-cache/org.hibernate/hibernate-validator/jars/hibernate-validator-4.1.0.Final.jar
+7fbbb03e6000-7fbbb03ed000 r--s 000bd000 08:05 5376331                    /home/arpit-singhal/.grails/ivy-cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.20.jar
+7fbbb03ed000-7fbbb03ef000 r--s 00000000 08:05 5248241                    /home/arpit-singhal/.grails/ivy-cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.6.2.jar
+7fbbb03ef000-7fbbb03f8000 r--s 0006d000 08:05 5248239                    /home/arpit-singhal/.grails/ivy-cache/log4j/log4j/bundles/log4j-1.2.16.jar
+7fbbb03f8000-7fbbb040d000 r--s 000e3000 08:05 5248237                    /home/arpit-singhal/.grails/ivy-cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.4.6.jar
+7fbbb040d000-7fbbb040f000 r--s 00005000 08:05 5248235                    /home/arpit-singhal/.grails/ivy-cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar
+7fbbb040f000-7fbbb0411000 r--s 00004000 08:05 5248233                    /home/arpit-singhal/.grails/ivy-cache/javax.servlet/jstl/jars/jstl-1.1.2.jar
+7fbbb0411000-7fbbb041b000 r--s 0012c000 08:05 5248231                    /home/arpit-singhal/.grails/ivy-cache/com.h2database/h2/jars/h2-1.3.164.jar
+7fbbb041b000-7fbbb041e000 r--s 00016000 08:05 5248229                    /home/arpit-singhal/.grails/ivy-cache/commons-pool/commons-pool/jars/commons-pool-1.5.6.jar
+7fbbb041e000-7fbbb0421000 r--s 00025000 08:05 5248227                    /home/arpit-singhal/.grails/ivy-cache/commons-dbcp/commons-dbcp/jars/commons-dbcp-1.4.jar
+7fbbb0421000-7fbbb0423000 r--s 0000e000 08:05 5248225                    /home/arpit-singhal/.grails/ivy-cache/oro/oro/jars/oro-2.0.8.jar
+7fbbb0423000-7fbbb0425000 r--s 0000d000 08:05 5248223                    /home/arpit-singhal/.grails/ivy-cache/commons-fileupload/commons-fileupload/jars/commons-fileupload-1.2.2.jar
+7fbbb0425000-7fbbb0426000 r--s 0000a000 08:05 5248221                    /home/arpit-singhal/.grails/ivy-cache/asm/asm/jars/asm-3.1.jar
+7fbbb0426000-7fbbb042d000 r--s 0003e000 08:05 5248219                    /home/arpit-singhal/.grails/ivy-cache/cglib/cglib/jars/cglib-2.2.jar
+7fbbb042d000-7fbbb0431000 r--s 00019000 08:05 5248217                    /home/arpit-singhal/.grails/ivy-cache/org.aspectj/aspectjrt/jars/aspectjrt-1.6.10.jar
+7fbbb0431000-7fbbb0447000 r--s 00184000 08:05 5248215                    /home/arpit-singhal/.grails/ivy-cache/org.aspectj/aspectjweaver/jars/aspectjweaver-1.6.10.jar
+7fbbb0447000-7fbbb044e000 r--s 00058000 08:05 5252553                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-datastore-simple/jars/grails-datastore-simple-1.1.8.RELEASE.jar
+7fbbb044e000-7fbbb0458000 r--s 00046000 08:05 5252552                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-datastore-core/jars/grails-datastore-core-1.1.8.RELEASE.jar
+7fbbb0458000-7fbbb045d000 r--s 0004c000 08:05 5252551                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-datastore-gorm/jars/grails-datastore-gorm-1.1.8.RELEASE.jar
+7fbbb045d000-7fbbb0469000 r--s 00082000 08:05 5252550                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-webmvc/jars/spring-webmvc-3.1.4.RELEASE.jar
+7fbbb0469000-7fbbb0476000 r--s 0007b000 08:05 5252549                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-web/jars/spring-web-3.1.4.RELEASE.jar
+7fbbb0476000-7fbbb047d000 r--s 00035000 08:05 5252548                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-tx/jars/spring-tx-3.1.4.RELEASE.jar
+7fbbb047d000-7fbbb0485000 r--s 00055000 08:05 5252547                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-orm/jars/spring-orm-3.1.4.RELEASE.jar
+7fbbb0485000-7fbbb048a000 r--s 0002d000 08:05 5252546                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-jms/jars/spring-jms-3.1.4.RELEASE.jar
+7fbbb048a000-7fbbb0495000 r--s 00059000 08:05 5252545                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-jdbc/jars/spring-jdbc-3.1.4.RELEASE.jar
+7fbbb0495000-7fbbb0499000 r--s 00028000 08:05 5252544                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-expression/jars/spring-expression-3.1.4.RELEASE.jar
+7fbbb0499000-7fbbb049c000 r--s 00018000 08:05 5252543                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-context-support/jars/spring-context-support-3.1.4.RELEASE.jar
+7fbbb049c000-7fbbb04b1000 r--s 000b8000 08:05 5252542                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-context/jars/spring-context-3.1.4.RELEASE.jar
+7fbbb04b1000-7fbbb04bd000 r--s 00086000 08:05 5252541                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-beans/jars/spring-beans-3.1.4.RELEASE.jar
+7fbbb04bd000-7fbbb04be000 r--s 0000c000 08:05 5252540                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-asm/jars/spring-asm-3.1.4.RELEASE.jar
+7fbbb04be000-7fbbb04c0000 r--s 0000b000 08:05 5252539                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-aspects/jars/spring-aspects-3.1.4.RELEASE.jar
+7fbbb04c0000-7fbbb04c9000 r--s 00049000 08:05 5252538                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-aop/jars/spring-aop-3.1.4.RELEASE.jar
+7fbbb04c9000-7fbbb04d4000 r--s 00064000 08:05 5252537                    /home/arpit-singhal/.grails/ivy-cache/org.springframework/spring-core/jars/spring-core-3.1.4.RELEASE.jar
+7fbbb04d4000-7fbbb04d6000 r--s 00008000 08:05 5252536                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-validation/jars/grails-plugin-validation-2.2.3.jar
+7fbbb04d6000-7fbbb04d9000 r--s 0001b000 08:05 5252535                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-url-mappings/jars/grails-plugin-url-mappings-2.2.3.jar
+7fbbb04d9000-7fbbb04db000 r--s 0000d000 08:05 5252534                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-mimetypes/jars/grails-plugin-mimetypes-2.2.3.jar
+7fbbb04db000-7fbbb04dd000 r--s 00005000 08:05 5252533                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-servlets/jars/grails-plugin-servlets-2.2.3.jar
+7fbbb04dd000-7fbbb04de000 r--s 00008000 08:05 5252532                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-services/jars/grails-plugin-services-2.2.3.jar
+7fbbb04de000-7fbbb04e0000 r--s 00005000 08:05 5252531                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-scaffolding/jars/grails-plugin-scaffolding-2.2.3.jar
+7fbbb04e0000-7fbbb04e3000 r--s 0000d000 08:05 5252530                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-log4j/jars/grails-plugin-log4j-2.2.3.jar
+7fbbb04e3000-7fbbb04e4000 r--s 00005000 08:05 5252529                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-i18n/jars/grails-plugin-i18n-2.2.3.jar
+7fbbb04e4000-7fbbb04eb000 r--s 00063000 08:05 5252528                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-gsp/jars/grails-plugin-gsp-2.2.3.jar
+7fbbb04eb000-7fbbb04ed000 r--s 0000c000 08:05 5252527                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-filters/jars/grails-plugin-filters-2.2.3.jar
+7fbbb04ed000-7fbbb04ef000 r--s 00009000 08:05 5252526                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-datasource/jars/grails-plugin-datasource-2.2.3.jar
+7fbbb04ef000-7fbbb04f3000 r--s 00022000 08:05 5252525                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-converters/jars/grails-plugin-converters-2.2.3.jar
+7fbbb04f3000-7fbbb04f6000 r--s 00017000 08:05 5252524                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-domain-class/jars/grails-plugin-domain-class-2.2.3.jar
+7fbbb04f6000-7fbbb04f9000 r--s 00025000 08:05 5252523                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-controllers/jars/grails-plugin-controllers-2.2.3.jar
+7fbbb04f9000-7fbbb04fb000 r--s 00013000 08:05 5252522                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-codecs/jars/grails-plugin-codecs-2.2.3.jar
+7fbbb04fb000-7fbbb04fc000 r--s 00000000 08:05 5252521                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-logging/jars/grails-logging-2.2.3.jar
+7fbbb04fc000-7fbbb050a000 r--s 000b7000 08:05 5252520                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-web/jars/grails-web-2.2.3.jar
+7fbbb050a000-7fbbb050b000 r--s 00009000 08:05 5252519                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-spring/jars/grails-spring-2.2.3.jar
+7fbbb050b000-7fbbb050d000 r--s 00027000 08:05 5252518                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-resources/jars/grails-resources-2.2.3.jar
+7fbbb050d000-7fbbb0517000 r--s 00085000 08:05 5252517                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-hibernate/jars/grails-hibernate-2.2.3.jar
+7fbbb0517000-7fbbb0518000 r--s 00009000 08:05 5252516                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-crud/jars/grails-crud-2.2.3.jar
+7fbbb0518000-7fbbb0528000 r--s 000c1000 08:05 5252515                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-core/jars/grails-core-2.2.3.jar
+7fbbb0528000-7fbbb052e000 r--s 00027000 08:05 5248135                    /home/arpit-singhal/.grails/ivy-cache/opensymphony/sitemesh/jars/sitemesh-2.4.jar
+7fbbb052e000-7fbbb0533000 r--s 00015000 08:05 5248133                    /home/arpit-singhal/.grails/ivy-cache/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/jars/hibernate-jpa-2.0-api-1.0.1.Final.jar
+7fbbb0533000-7fbbb0534000 r--s 00003000 08:05 5248131                    /home/arpit-singhal/.grails/ivy-cache/javax.transaction/jta/jars/jta-1.1.jar
+7fbbb0534000-7fbbb0539000 r--s 00041000 08:05 5248129                    /home/arpit-singhal/.grails/ivy-cache/commons-lang/commons-lang/jars/commons-lang-2.6.jar
+7fbbb0539000-7fbbb053c000 r--s 00025000 08:05 5248127                    /home/arpit-singhal/.grails/ivy-cache/commons-io/commons-io/jars/commons-io-2.1.jar
+7fbbb053c000-7fbbb054a000 r--s 0007f000 08:05 5248125                    /home/arpit-singhal/.grails/ivy-cache/commons-collections/commons-collections/jars/commons-collections-3.2.1.jar
+7fbbb054a000-7fbbb054c000 r--s 00010000 08:05 5248123                    /home/arpit-singhal/.grails/ivy-cache/commons-codec/commons-codec/jars/commons-codec-1.5.jar
+7fbbb054c000-7fbbb054f000 r--s 0000b000 08:05 5252514                    /home/arpit-singhal/.grails/ivy-cache/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/jars/concurrentlinkedhashmap-lru-1.3.1.jar
+7fbbb054f000-7fbbb0551000 r--s 00000000 08:05 5248119                    /home/arpit-singhal/.grails/ivy-cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar
+7fbbb0551000-7fbbb0554000 r--s 0001f000 08:05 5248117                    /home/arpit-singhal/.grails/ivy-cache/commons-validator/commons-validator/jars/commons-validator-1.3.1.jar
+7fbbb0554000-7fbbb0557000 r--s 00019000 08:05 5248115                    /home/arpit-singhal/.grails/ivy-cache/commons-el/commons-el/jars/commons-el-1.0.jar
+7fbbb0557000-7fbbb055c000 r--s 00034000 08:05 5248113                    /home/arpit-singhal/.grails/ivy-cache/commons-beanutils/commons-beanutils/jars/commons-beanutils-1.8.3.jar
+7fbbb055c000-7fbbb05bc000 r--s 00596000 08:05 5252513                    /home/arpit-singhal/.grails/ivy-cache/org.codehaus.groovy/groovy-all/jars/groovy-all-2.0.8.jar
+7fbbb05bc000-7fbbb05be000 r--s 00013000 08:05 5252401                    /home/arpit-singhal/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-log4j/jars/tomcat-embed-logging-log4j-7.0.39.jar
+7fbbb05be000-7fbbb05c0000 r--s 00008000 08:05 5381012                    /home/arpit-singhal/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-juli/jars/tomcat-embed-logging-juli-7.0.39.jar
+7fbbb05c0000-7fbbb05d0000 r--s 0019c000 08:05 5374959                    /home/arpit-singhal/.grails/ivy-cache/org.eclipse.jdt.core.compiler/ecj/jars/ecj-3.7.2.jar
+7fbbb05d0000-7fbbb05db000 r--s 000b8000 08:05 5252400                    /home/arpit-singhal/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-jasper/jars/tomcat-embed-jasper-7.0.39.jar
+7fbbb05db000-7fbbb05dd000 r--s 0000c000 08:05 5381011                    /home/arpit-singhal/.grails/ivy-cache/org.apache.tomcat/tomcat-catalina-ant/jars/tomcat-catalina-ant-7.0.39.jar
+7fbbb05dd000-7fbbb05ff000 r--s 00257000 08:05 5252399                    /home/arpit-singhal/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-core/jars/tomcat-embed-core-7.0.39.jar
+7fbbb05ff000-7fbbb0601000 r--s 00011000 08:05 5381010                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-plugin-tomcat/jars/grails-plugin-tomcat-2.2.3.jar
+7fbbb0601000-7fbbb0603000 r--s 00017000 08:05 5247801                    /home/arpit-singhal/.grails/ivy-cache/org.apache.ant/ant-junit/jars/ant-junit-1.8.2.jar
+7fbbb0603000-7fbbb0605000 r--s 00002000 08:05 5247799                    /home/arpit-singhal/.grails/ivy-cache/org.apache.ant/ant-launcher/jars/ant-launcher-1.8.2.jar
+7fbbb0605000-7fbbb0623000 r--s 001bb000 08:05 5247797                    /home/arpit-singhal/.grails/ivy-cache/org.apache.ant/ant/jars/ant-1.8.2.jar
+7fbbb0623000-7fbbb0625000 r--s 00003000 08:05 5247795                    /home/arpit-singhal/.grails/ivy-cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.6.2.jar
+7fbbb0625000-7fbbb0627000 r--s 00005000 08:05 5247793                    /home/arpit-singhal/.grails/ivy-cache/org.slf4j/slf4j-api/jars/slf4j-api-1.6.2.jar
+7fbbb0627000-7fbbb0630000 r--s 000cd000 08:05 5252386                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-scripts/jars/grails-scripts-2.2.3.jar
+7fbbb0630000-7fbbb063b000 r--s 000ab000 08:05 5252385                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-bootstrap/jars/grails-bootstrap-2.2.3.jar
+7fbbb063b000-7fbbb063e000 r--s 00044000 08:05 5252382                    /home/arpit-singhal/.grails/ivy-cache/org.grails/grails-docs/jars/grails-docs-2.2.3.jar
+7fbbb063e000-7fbbb0641000 r--s 00041000 08:05 5247785                    /home/arpit-singhal/.grails/ivy-cache/xalan/serializer/jars/serializer-2.7.1.jar
+7fbbb0641000-7fbbb0644000 r--s 000cf000 08:05 5247783                    /home/arpit-singhal/.grails/ivy-cache/net.java.dev.jna/jna/jars/jna-3.2.3.jar
+7fbbb0644000-7fbbb0646000 r--s 00008000 08:05 5247781                    /home/arpit-singhal/.grails/ivy-cache/org.fusesource.jansi/jansi/jars/jansi-1.2.1.jar
+7fbbb0646000-7fbbb0655000 r--s 000d9000 08:05 5247779                    /home/arpit-singhal/.grails/ivy-cache/org.apache.ivy/ivy/jars/ivy-2.2.0.jar
+7fbbb0655000-7fbbb067a000 r--s 00172000 08:05 5247775                    /home/arpit-singhal/.grails/ivy-cache/org.bouncycastle/bcprov-jdk15/jars/bcprov-jdk15-1.45.jar
+7fbbb067a000-7fbbb067f000 r--s 00024000 08:05 5247773                    /home/arpit-singhal/.grails/ivy-cache/org.bouncycastle/bcpg-jdk15/jars/bcpg-jdk15-1.45.jar
+7fbbb067f000-7fbbb0685000 r--s 00068000 08:05 5247769                    /home/arpit-singhal/.grails/ivy-cache/com.google.protobuf/protobuf-java/jars/protobuf-java-2.4.1.jar
+7fbbb0685000-7fbbb0688000 ---p 00000000 00:00 0 
+7fbbb0688000-7fbbb069f000 rw-p 00000000 00:00 0                          [stack:3448]
+7fbbb069f000-7fbbb06b4000 r-xp 00000000 08:05 3416148                    /tmp/jna1814357376526848531.tmp
+7fbbb06b4000-7fbbb07b3000 ---p 00015000 08:05 3416148                    /tmp/jna1814357376526848531.tmp
+7fbbb07b3000-7fbbb07b5000 rw-p 00014000 08:05 3416148                    /tmp/jna1814357376526848531.tmp
+7fbbb07b5000-7fbbb081e000 r--s 00e06000 08:06 3939975                    /opt/jdk1.7.0/lib/tools.jar
+7fbbb081e000-7fbbb081f000 ---p 00000000 00:00 0 
+7fbbb081f000-7fbbb091f000 rw-p 00000000 00:00 0                          [stack:3445]
+7fbbb091f000-7fbbb1000000 r--p 00000000 08:05 5904682                    /usr/lib/locale/locale-archive
+7fbbb1000000-7fbbb14c0000 rwxp 00000000 00:00 0 
+7fbbb14c0000-7fbbb51e6000 rw-p 00000000 00:00 0 
+7fbbb51e6000-7fbbb8000000 ---p 00000000 00:00 0 
+7fbbb8000000-7fbbb8001000 r--s 00001000 08:05 5247803                    /home/arpit-singhal/.grails/ivy-cache/org.apache.ant/ant-trax/jars/ant-trax-1.7.1.jar
+7fbbb8001000-7fbbb8003000 r--s 00015000 08:05 5247777                    /home/arpit-singhal/.grails/ivy-cache/jline/jline/jars/jline-1.0.jar
+7fbbb8003000-7fbbb8006000 r--s 0001a000 08:05 5247767                    /home/arpit-singhal/.grails/ivy-cache/org.springframework.uaa/org.springframework.uaa.client/bundles/org.springframework.uaa.client-1.0.1.RELEASE.jar
+7fbbb8006000-7fbbb800f000 r--s 00254000 08:06 3940696                    /opt/jdk1.7.0/jre/lib/resources.jar
+7fbbb800f000-7fbbb8013000 r--s 00088000 08:06 3940544                    /opt/jdk1.7.0/jre/lib/jsse.jar
+7fbbb8013000-7fbbb8018000 r--s 00050000 08:06 3020908                    /opt/grails-2.2.3/lib/org.codehaus.gant/gant_groovy1.8/jars/gant_groovy1.8-1.9.6.jar
+7fbbb8018000-7fbbb8036000 r--s 001bb000 08:06 3020898                    /opt/grails-2.2.3/lib/org.apache.ant/ant/jars/ant-1.8.2.jar
+7fbbb8036000-7fbbb8039000 ---p 00000000 00:00 0 
+7fbbb8039000-7fbbb8137000 rw-p 00000000 00:00 0                          [stack:3444]
+7fbbb8137000-7fbbb813a000 ---p 00000000 00:00 0 
+7fbbb813a000-7fbbb8238000 rw-p 00000000 00:00 0                          [stack:3443]
+7fbbb8238000-7fbbb823b000 ---p 00000000 00:00 0 
+7fbbb823b000-7fbbb8339000 rw-p 00000000 00:00 0                          [stack:3442]
+7fbbb8339000-7fbbb8399000 r--s 00596000 08:06 3020963                    /opt/grails-2.2.3/lib/org.codehaus.groovy/groovy-all/jars/groovy-all-2.0.8.jar
+7fbbb8399000-7fbbb839c000 ---p 00000000 00:00 0 
+7fbbb839c000-7fbbb849a000 rw-p 00000000 00:00 0                          [stack:3441]
+7fbbb849a000-7fbbb849d000 ---p 00000000 00:00 0 
+7fbbb849d000-7fbbb859b000 rw-p 00000000 00:00 0                          [stack:3440]
+7fbbb859b000-7fbbb859e000 ---p 00000000 00:00 0 
+7fbbb859e000-7fbbb869c000 rw-p 00000000 00:00 0                          [stack:3439]
+7fbbb869c000-7fbbb869d000 ---p 00000000 00:00 0 
+7fbbb869d000-7fbbb8d12000 rw-p 00000000 00:00 0                          [stack:3438]
+7fbbb8d12000-7fbbb8ed1000 r--s 039fa000 08:06 3940700                    /opt/jdk1.7.0/jre/lib/rt.jar
+7fbbb8ed1000-7fbbb8ed2000 ---p 00000000 00:00 0 
+7fbbb8ed2000-7fbbb8fd2000 rw-p 00000000 00:00 0                          [stack:3437]
+7fbbb8fd2000-7fbbb8fd3000 ---p 00000000 00:00 0 
+7fbbb8fd3000-7fbbb90d3000 rw-p 00000000 00:00 0                          [stack:3436]
+7fbbb90d3000-7fbbb90d4000 ---p 00000000 00:00 0 
+7fbbb90d4000-7fbbb91d4000 rw-p 00000000 00:00 0                          [stack:3435]
+7fbbb91d4000-7fbbb91d5000 ---p 00000000 00:00 0 
+7fbbb91d5000-7fbbb92e5000 rw-p 00000000 00:00 0                          [stack:3434]
+7fbbb92e5000-7fbbb9355000 rw-p 00000000 00:00 0 
+7fbbb9355000-7fbbb937e000 rw-p 00000000 00:00 0 
+7fbbb937e000-7fbbb93a3000 ---p 00000000 00:00 0 
+7fbbb93a3000-7fbbb9455000 rw-p 00000000 00:00 0 
+7fbbb9455000-7fbbb9465000 rw-p 00000000 00:00 0 
+7fbbb9465000-7fbbb94d5000 rw-p 00000000 00:00 0 
+7fbbb94d5000-7fbbb94fe000 rw-p 00000000 00:00 0 
+7fbbb94fe000-7fbbb9523000 ---p 00000000 00:00 0 
+7fbbb9523000-7fbbb95d5000 rw-p 00000000 00:00 0 
+7fbbb95d5000-7fbbb9647000 rw-p 00000000 00:00 0 
+7fbbb9647000-7fbbb9655000 rw-p 00000000 00:00 0 
+7fbbb9655000-7fbbb9656000 rw-p 00000000 00:00 0 
+7fbbb9656000-7fbbb9670000 r-xp 00000000 08:06 3940754                    /opt/jdk1.7.0/jre/lib/amd64/libzip.so
+7fbbb9670000-7fbbb9870000 ---p 0001a000 08:06 3940754                    /opt/jdk1.7.0/jre/lib/amd64/libzip.so
+7fbbb9870000-7fbbb9871000 rw-p 0001a000 08:06 3940754                    /opt/jdk1.7.0/jre/lib/amd64/libzip.so
+7fbbb9871000-7fbbb987d000 r-xp 00000000 08:05 3280656                    /lib/x86_64-linux-gnu/libnss_files-2.17.so
+7fbbb987d000-7fbbb9a7c000 ---p 0000c000 08:05 3280656                    /lib/x86_64-linux-gnu/libnss_files-2.17.so
+7fbbb9a7c000-7fbbb9a7d000 r--p 0000b000 08:05 3280656                    /lib/x86_64-linux-gnu/libnss_files-2.17.so
+7fbbb9a7d000-7fbbb9a7e000 rw-p 0000c000 08:05 3280656                    /lib/x86_64-linux-gnu/libnss_files-2.17.so
+7fbbb9a7e000-7fbbb9a89000 r-xp 00000000 08:05 3280660                    /lib/x86_64-linux-gnu/libnss_nis-2.17.so
+7fbbb9a89000-7fbbb9c88000 ---p 0000b000 08:05 3280660                    /lib/x86_64-linux-gnu/libnss_nis-2.17.so
+7fbbb9c88000-7fbbb9c89000 r--p 0000a000 08:05 3280660                    /lib/x86_64-linux-gnu/libnss_nis-2.17.so
+7fbbb9c89000-7fbbb9c8a000 rw-p 0000b000 08:05 3280660                    /lib/x86_64-linux-gnu/libnss_nis-2.17.so
+7fbbb9c8a000-7fbbb9ca1000 r-xp 00000000 08:05 3280650                    /lib/x86_64-linux-gnu/libnsl-2.17.so
+7fbbb9ca1000-7fbbb9ea0000 ---p 00017000 08:05 3280650                    /lib/x86_64-linux-gnu/libnsl-2.17.so
+7fbbb9ea0000-7fbbb9ea1000 r--p 00016000 08:05 3280650                    /lib/x86_64-linux-gnu/libnsl-2.17.so
+7fbbb9ea1000-7fbbb9ea2000 rw-p 00017000 08:05 3280650                    /lib/x86_64-linux-gnu/libnsl-2.17.so
+7fbbb9ea2000-7fbbb9ea4000 rw-p 00000000 00:00 0 
+7fbbb9ea4000-7fbbb9eac000 r-xp 00000000 08:05 3280652                    /lib/x86_64-linux-gnu/libnss_compat-2.17.so
+7fbbb9eac000-7fbbba0ab000 ---p 00008000 08:05 3280652                    /lib/x86_64-linux-gnu/libnss_compat-2.17.so
+7fbbba0ab000-7fbbba0ac000 r--p 00007000 08:05 3280652                    /lib/x86_64-linux-gnu/libnss_compat-2.17.so
+7fbbba0ac000-7fbbba0ad000 rw-p 00008000 08:05 3280652                    /lib/x86_64-linux-gnu/libnss_compat-2.17.so
+7fbbba0ad000-7fbbba0b7000 r-xp 00000000 08:06 3940747                    /opt/jdk1.7.0/jre/lib/amd64/libinstrument.so
+7fbbba0b7000-7fbbba2b6000 ---p 0000a000 08:06 3940747                    /opt/jdk1.7.0/jre/lib/amd64/libinstrument.so
+7fbbba2b6000-7fbbba2b7000 rw-p 00009000 08:06 3940747                    /opt/jdk1.7.0/jre/lib/amd64/libinstrument.so
+7fbbba2b7000-7fbbba2e0000 r-xp 00000000 08:06 3940749                    /opt/jdk1.7.0/jre/lib/amd64/libjava.so
+7fbbba2e0000-7fbbba4e0000 ---p 00029000 08:06 3940749                    /opt/jdk1.7.0/jre/lib/amd64/libjava.so
+7fbbba4e0000-7fbbba4e2000 rw-p 00029000 08:06 3940749                    /opt/jdk1.7.0/jre/lib/amd64/libjava.so
+7fbbba4e2000-7fbbba4f1000 r-xp 00000000 08:06 3940743                    /opt/jdk1.7.0/jre/lib/amd64/libverify.so
+7fbbba4f1000-7fbbba6f0000 ---p 0000f000 08:06 3940743                    /opt/jdk1.7.0/jre/lib/amd64/libverify.so
+7fbbba6f0000-7fbbba6f2000 rw-p 0000e000 08:06 3940743                    /opt/jdk1.7.0/jre/lib/amd64/libverify.so
+7fbbba6f2000-7fbbba6f9000 r-xp 00000000 08:05 3280703                    /lib/x86_64-linux-gnu/librt-2.17.so
+7fbbba6f9000-7fbbba8f8000 ---p 00007000 08:05 3280703                    /lib/x86_64-linux-gnu/librt-2.17.so
+7fbbba8f8000-7fbbba8f9000 r--p 00006000 08:05 3280703                    /lib/x86_64-linux-gnu/librt-2.17.so
+7fbbba8f9000-7fbbba8fa000 rw-p 00007000 08:05 3280703                    /lib/x86_64-linux-gnu/librt-2.17.so
+7fbbba8fa000-7fbbba9fd000 r-xp 00000000 08:05 3280631                    /lib/x86_64-linux-gnu/libm-2.17.so
+7fbbba9fd000-7fbbbabfd000 ---p 00103000 08:05 3280631                    /lib/x86_64-linux-gnu/libm-2.17.so
+7fbbbabfd000-7fbbbabfe000 r--p 00103000 08:05 3280631                    /lib/x86_64-linux-gnu/libm-2.17.so
+7fbbbabfe000-7fbbbabff000 rw-p 00104000 08:05 3280631                    /lib/x86_64-linux-gnu/libm-2.17.so
+7fbbbabff000-7fbbbb5cf000 r-xp 00000000 08:06 3940726                    /opt/jdk1.7.0/jre/lib/amd64/server/libjvm.so
+7fbbbb5cf000-7fbbbb7cf000 ---p 009d0000 08:06 3940726                    /opt/jdk1.7.0/jre/lib/amd64/server/libjvm.so
+7fbbbb7cf000-7fbbbb86a000 rw-p 009d0000 08:06 3940726                    /opt/jdk1.7.0/jre/lib/amd64/server/libjvm.so
+7fbbbb86a000-7fbbbb8a3000 rw-p 00000000 00:00 0 
+7fbbbb8a3000-7fbbbba61000 r-xp 00000000 08:05 3280583                    /lib/x86_64-linux-gnu/libc-2.17.so
+7fbbbba61000-7fbbbbc60000 ---p 001be000 08:05 3280583                    /lib/x86_64-linux-gnu/libc-2.17.so
+7fbbbbc60000-7fbbbbc64000 r--p 001bd000 08:05 3280583                    /lib/x86_64-linux-gnu/libc-2.17.so
+7fbbbbc64000-7fbbbbc66000 rw-p 001c1000 08:05 3280583                    /lib/x86_64-linux-gnu/libc-2.17.so
+7fbbbbc66000-7fbbbbc6b000 rw-p 00000000 00:00 0 
+7fbbbbc6b000-7fbbbbc6e000 r-xp 00000000 08:05 3280598                    /lib/x86_64-linux-gnu/libdl-2.17.so
+7fbbbbc6e000-7fbbbbe6d000 ---p 00003000 08:05 3280598                    /lib/x86_64-linux-gnu/libdl-2.17.so
+7fbbbbe6d000-7fbbbbe6e000 r--p 00002000 08:05 3280598                    /lib/x86_64-linux-gnu/libdl-2.17.so
+7fbbbbe6e000-7fbbbbe6f000 rw-p 00003000 08:05 3280598                    /lib/x86_64-linux-gnu/libdl-2.17.so
+7fbbbbe6f000-7fbbbbe85000 r-xp 00000000 08:06 3940753                    /opt/jdk1.7.0/jre/lib/amd64/jli/libjli.so
+7fbbbbe85000-7fbbbc084000 ---p 00016000 08:06 3940753                    /opt/jdk1.7.0/jre/lib/amd64/jli/libjli.so
+7fbbbc084000-7fbbbc085000 rw-p 00015000 08:06 3940753                    /opt/jdk1.7.0/jre/lib/amd64/jli/libjli.so
+7fbbbc085000-7fbbbc09d000 r-xp 00000000 08:05 3280695                    /lib/x86_64-linux-gnu/libpthread-2.17.so
+7fbbbc09d000-7fbbbc29c000 ---p 00018000 08:05 3280695                    /lib/x86_64-linux-gnu/libpthread-2.17.so
+7fbbbc29c000-7fbbbc29d000 r--p 00017000 08:05 3280695                    /lib/x86_64-linux-gnu/libpthread-2.17.so
+7fbbbc29d000-7fbbbc29e000 rw-p 00018000 08:05 3280695                    /lib/x86_64-linux-gnu/libpthread-2.17.so
+7fbbbc29e000-7fbbbc2a2000 rw-p 00000000 00:00 0 
+7fbbbc2a2000-7fbbbc2c5000 r-xp 00000000 08:05 3280559                    /lib/x86_64-linux-gnu/ld-2.17.so
+7fbbbc2c5000-7fbbbc2c6000 r--s 00003000 08:05 5247771                    /home/arpit-singhal/.grails/ivy-cache/com.googlecode.json-simple/json-simple/jars/json-simple-1.1.jar
+7fbbbc2c6000-7fbbbc2c8000 r--s 00001000 08:06 3940717                    /opt/jdk1.7.0/jre/lib/ext/dnsns.jar
+7fbbbc2c8000-7fbbbc2d7000 r--s 000d9000 08:06 3020676                    /opt/grails-2.2.3/lib/org.apache.ivy/ivy/jars/ivy-2.2.0.jar
+7fbbbc2d7000-7fbbbc2d9000 r--s 00009000 08:06 3020915                    /opt/grails-2.2.3/lib/commons-cli/commons-cli/jars/commons-cli-1.2.jar
+7fbbbc2d9000-7fbbbc2dc000 r--s 000cf000 08:06 3020801                    /opt/grails-2.2.3/lib/net.java.dev.jna/jna/jars/jna-3.2.3.jar
+7fbbbc2dc000-7fbbbc2de000 r--s 00008000 08:06 3020707                    /opt/grails-2.2.3/lib/org.fusesource.jansi/jansi/jars/jansi-1.2.1.jar
+7fbbbc2de000-7fbbbc2e0000 r--s 00015000 08:06 3020806                    /opt/grails-2.2.3/lib/jline/jline/jars/jline-1.0.jar
+7fbbbc2e0000-7fbbbc2f3000 rw-p 00000000 00:00 0 
+7fbbbc2f3000-7fbbbc3a0000 rw-p 00000000 00:00 0 
+7fbbbc3a0000-7fbbbc3a3000 ---p 00000000 00:00 0 
+7fbbbc3a3000-7fbbbc4a5000 rw-p 00000000 00:00 0                          [stack:3433]
+7fbbbc4a5000-7fbbbc4ad000 r--s 00068000 08:06 3021094                    /opt/grails-2.2.3/lib/org.springsource.springloaded/springloaded-core/jars/springloaded-core-1.1.3.jar
+7fbbbc4ad000-7fbbbc4b8000 r--s 000ab000 08:06 3020571                    /opt/grails-2.2.3/dist/grails-bootstrap-2.2.3.jar
+7fbbbc4b8000-7fbbbc4c0000 rw-s 00000000 08:05 3413275                    /tmp/hsperfdata_arpit-singhal/3424
+7fbbbc4c0000-7fbbbc4c1000 rw-p 00000000 00:00 0 
+7fbbbc4c1000-7fbbbc4c2000 r--p 00000000 00:00 0 
+7fbbbc4c2000-7fbbbc4c4000 rw-p 00000000 00:00 0 
+7fbbbc4c4000-7fbbbc4c5000 r--p 00022000 08:05 3280559                    /lib/x86_64-linux-gnu/ld-2.17.so
+7fbbbc4c5000-7fbbbc4c7000 rw-p 00023000 08:05 3280559                    /lib/x86_64-linux-gnu/ld-2.17.so
+7fffc3b1c000-7fffc3b3e000 rw-p 00000000 00:00 0                          [stack]
+7fffc3bfe000-7fffc3c00000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xmx768M -Xms64M -XX:PermSize=32m -XX:MaxPermSize=256m -Dfile.encoding=UTF-8 -javaagent:/opt/grails-2.2.3/lib/org.springsource.springloaded/springloaded-core/jars/springloaded-core-1.1.3.jar -Xverify:none -Dspringloaded=profile=grails;cacheDir=/home/arpit-singhal/.grails/2.2.3/ -Dgrails.home=/opt/grails-2.2.3 -Dtools.jar=/opt/jdk1.7.0/lib/tools.jar 
+java_command: org.codehaus.groovy.grails.cli.support.GrailsStarter --main org.codehaus.groovy.grails.cli.GrailsScriptRunner --conf /opt/grails-2.2.3/conf/groovy-starter.conf --classpath 
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/opt/jdk1.7.0
+PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/jdk1.7.0/bin:/opt/groovy-2.0.6/bin:/opt/idea-IU-129.161/bin:/opt/grails-2.2.3/bin
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x84be70], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x84be70], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x6f3820], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x6f3820], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x6f3820], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x6f3820], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x6f3190], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x6f5650], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x6f5650], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x6f5650], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x6f5650], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:wheezy/sid
+
+uname:Linux 3.8.0-30-generic #44-Ubuntu SMP Thu Aug 22 20:52:24 UTC 2013 x86_64
+libc:glibc 2.17 NPTL 2.17 
+rlimit: STACK 8192k, CORE 0k, NPROC 61123, NOFILE 4096, AS infinity
+load average:1.15 0.62 0.62
+
+/proc/meminfo:
+MemTotal:        7842856 kB
+MemFree:         3431404 kB
+Buffers:          107668 kB
+Cached:          1613832 kB
+SwapCached:            0 kB
+Active:          3130248 kB
+Inactive:        1054184 kB
+Active(anon):    2463880 kB
+Inactive(anon):   201964 kB
+Active(file):     666368 kB
+Inactive(file):   852220 kB
+Unevictable:          48 kB
+Mlocked:              48 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:               536 kB
+Writeback:             0 kB
+AnonPages:       2463104 kB
+Mapped:           227188 kB
+Shmem:            202876 kB
+Slab:             109948 kB
+SReclaimable:      79788 kB
+SUnreclaim:        30160 kB
+KernelStack:        5000 kB
+PageTables:        41732 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     3921428 kB
+Committed_AS:    5759096 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      354820 kB
+VmallocChunk:   34359374300 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       45056 kB
+DirectMap2M:     8007680 kB
+
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i5 CPU       M 430  @ 2.27GHz
+stepping	: 2
+microcode	: 0x9
+cpu MHz		: 2267.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm sse4_1 sse4_2 popcnt lahf_lm ida arat dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 4522.28
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i5 CPU       M 430  @ 2.27GHz
+stepping	: 2
+microcode	: 0x9
+cpu MHz		: 1199.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm sse4_1 sse4_2 popcnt lahf_lm ida arat dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 4522.28
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i5 CPU       M 430  @ 2.27GHz
+stepping	: 2
+microcode	: 0x9
+cpu MHz		: 2267.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 2
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm sse4_1 sse4_2 popcnt lahf_lm ida arat dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 4522.28
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i5 CPU       M 430  @ 2.27GHz
+stepping	: 2
+microcode	: 0x9
+cpu MHz		: 2267.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 2
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm sse4_1 sse4_2 popcnt lahf_lm ida arat dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 4522.28
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 7842856k(3431404k free), swap 0k(0k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (21.0-b17) for linux-amd64 JRE (1.7.0-b147), built on Jun 27 2011 01:30:59 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Wed Sep 18 10:01:32 2013
+elapsed time: 27 seconds
+
