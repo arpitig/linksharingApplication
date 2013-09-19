@@ -7,6 +7,54 @@
 
 
     </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://jquery.bassistance.de/validate/jquery.validate.js"></script>
+    <script type="text/javascript">
+        /**
+         * Basic jQuery Validation Form Demo Code
+         * Copyright Sam Deering 2012
+         * Licence: http://www.jquery4u.com/license/
+         */
+        (function($,W,D)
+        {
+            var JQUERY4U = {};
+
+            JQUERY4U.UTIL =
+            {
+                setupFormValidation: function()
+                {
+                    //form validation rules
+                    $("#homepage").validate({
+                        rules: {
+                            emailig: {
+                                required: true,
+                                email:true
+                            },
+
+                            passwordig: {
+                                required: true
+                            }
+
+                        },
+                        messages: {
+                            emailig: "Please enter your Email",
+                            passwordig: "Please enter your password"
+
+                        },
+                        submitHandler: function(form) {
+                            form.submit();
+                        }
+                    });
+                }
+            }
+
+            //when the dom has loaded setup form validation rules
+            $(D).ready(function($) {
+                JQUERY4U.UTIL.setupFormValidation();
+            });
+
+        })(jQuery, window, document);
+    </script>
 </head>
 <body>
 <g:if test="${flash.message}">

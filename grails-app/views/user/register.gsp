@@ -15,6 +15,74 @@
 
 
     </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://jquery.bassistance.de/validate/jquery.validate.js"></script>
+    <script type="text/javascript">
+        /**
+         * Basic jQuery Validation Form Demo Code
+         * Copyright Sam Deering 2012
+         * Licence: http://www.jquery4u.com/license/
+         */
+        (function($,W,D)
+        {
+            var JQUERY4U = {};
+
+            JQUERY4U.UTIL =
+            {
+                setupFormValidation: function()
+                {
+                    //form validation rules
+                    $("#homepage").validate({
+                        rules: {
+                            email: {
+                                required: true,
+                                email:true
+                            },
+                            firstName :"required",
+                            lastName  :"required"  ,
+                            password  : {
+                                required: true
+                            } ,
+                            confirmPassword :{
+                                required:true,
+                                equalTo:"#password"
+                            },
+                            gender:{
+                                required:true
+                            }  ,
+                            dateOfBirth:{
+                                required:true ,
+                                date:true
+                            }
+
+                        },
+                        messages: {
+                            email: "Please enter your Email",
+                            firstName:"Please enter First Name",
+                            lastName:"Please enter last name"  ,
+                            password: "Please enter your password" ,
+                            confirmPassword:{
+                                required:"Please enter confirm password",
+                                equalTo:"Please enter correct confirmation password"
+                            }    ,
+                            gender:"Please enter Gender" ,
+                            dateOfBirth:"Please Select Date of birth"
+
+                        },
+                        submitHandler: function(form) {
+                            form.submit();
+                        }
+                    });
+                }
+            }
+
+            //when the dom has loaded setup form validation rules
+            $(D).ready(function($) {
+                JQUERY4U.UTIL.setupFormValidation();
+            });
+
+        })(jQuery, window, document);
+    </script>
 </head>
 <body>
 <g:form name="homepage" controller="user" action="saveig">
