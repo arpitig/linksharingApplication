@@ -5,7 +5,7 @@ import org.springframework.dao.DataIntegrityViolationException
 class UserController {
 
 
-    def beforeInterceptor = [action: this.&auth, except: ['register','forget']]
+    def beforeInterceptor = [action: this.&auth, except: ['register','forget','saveig']]
 
     private auth() {
         if (!session.user) {
@@ -215,11 +215,14 @@ class UserController {
     }
 
     def saveig() {
+       // render params
         def userInstance = new User(params)
         if (!userInstance.save(flush: true)) {
             render(view: "register", model: [userInstance: userInstance])
+            println "1"
             return
         }  else{
+            println "2"
             session.user=userInstance
             redirect(action: "show", id: userInstance.id)
 

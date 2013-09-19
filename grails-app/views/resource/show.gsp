@@ -40,35 +40,35 @@
 					
 				</li>
 				</g:if>
-			
+
 				<g:if test="${resourceInstance?.dateCreated}">
 				<li class="fieldcontain">
 					<span id="dateCreated-label" class="property-label"><g:message code="resource.dateCreated.label" default="Date Created" /></span>
-					
+
 						<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${resourceInstance?.dateCreated}" /></span>
-					
+
 				</li>
 				</g:if>
-			
+
 				<g:if test="${resourceInstance?.lastUpdated}">
 				<li class="fieldcontain">
 					<span id="lastUpdated-label" class="property-label"><g:message code="resource.lastUpdated.label" default="Last Updated" /></span>
-					
+
 						<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${resourceInstance?.lastUpdated}" /></span>
-					
+
 				</li>
 				</g:if>
-			
+
 				<g:if test="${resourceInstance?.readingItems}">
 				<li class="fieldcontain">
 					<span id="readingItems-label" class="property-label"><g:message code="resource.readingItems.label" default="Reading Items" /></span>
-					
+
 						<g:each in="${resourceInstance.readingItems}" var="r">
 						<span class="property-value" aria-labelledby="readingItems-label"><g:link controller="readingItem" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
 						${r.isFavourite}
                         ${r.isRead}
                         </g:each>
-					
+
 				</li>
 				</g:if>
 
@@ -82,7 +82,11 @@
                     <li class="fieldcontain">
                         <span id="summary-url" class="property-label">Document</span>
 
-                        <span class="property-value" aria-labelledby="summary-label"><g:fieldValue bean="${resourceInstance}" field="fileName"/></span>
+                        <span class="property-value" aria-labelledby="summary-label">
+                            <g:link controller="resource" action="downloadFile" id="${resourceInstance.fileName}">
+
+                            <g:fieldValue bean="${resourceInstance}" field="fileName"/>
+                            </g:link></span>
 
                     </li>
                 </g:if>
@@ -110,7 +114,7 @@
 					%{----}%
 				%{--</li>--}%
 				%{--</g:if>--}%
-			
+
 				%{--<g:if test="${resourceInstance?.topic}">--}%
 				%{--<li class="fieldcontain">--}%
 					%{--<span id="topic-label" class="property-label"><g:message code="resource.topic.label" default="Topic" /></span>--}%
@@ -119,7 +123,7 @@
 					%{----}%
 				%{--</li>--}%
 				%{--</g:if>--}%
-			
+
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

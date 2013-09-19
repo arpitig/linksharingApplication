@@ -4,7 +4,14 @@ class BootStrap {
 
     def init = { servletContext ->
 
+
+
+        new User(email:'tushar.saxena@intelligrape.com',gender: 'Male',firstName: 'Tushar',lastName: 'Saxena',dateOfBirth: new Date(),password: '12345').save()
+        new User(email:'deepak.krmittal@intelligrape.com',gender: 'Male',firstName: 'Deepak',lastName: 'Mittal',dateOfBirth: new Date(),password: '12345').save()
+        new User(email:'arshad.khan@intelligrape.com',gender: 'Male',firstName: 'Arshad',lastName: 'Khan',dateOfBirth: new Date(),password: '12345').save()
+
         new User(email:'arpit.singhal@intelligrape.com',gender: 'Male',firstName: 'Arpit',lastName: 'Singhal',dateOfBirth: new Date(),password: '12345').save()
+        new User(email:'admin@gmail.com',gender: 'Male',firstName: 'Arpit',lastName: 'Singhal',dateOfBirth: new Date(),password: '12345').save()
 
         10.times {
             new User(email:"arpitsinghalmca${it}@gmail.com",gender: 'Male',firstName: "Arpit${it}",lastName: "Singhal${it}",dob: new Date(),password: '12345').save()

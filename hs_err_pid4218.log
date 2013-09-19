@@ -1,0 +1,101 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00000000c0002d78, pid=4218, tid=139926140098304
+#
+# JRE version: 7.0_25-b30
+# Java VM: OpenJDK 64-Bit Server VM (23.7-b01 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  0x00000000c0002d78
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please include
+# instructions on how to reproduce the bug and visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-7/
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f431c018800):  GCTaskThread [stack: 0x00007f4317d01000,0x00007f4317e02000] [id=4220]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=2 (SEGV_ACCERR), si_addr=0x00000000c0002d78
+
+Registers:
+RAX=0x00000000c0697bf0, RBX=0x00007f431c16de70, RCX=0x0000000000000000, RDX=0x00000000c06996f8
+RSP=0x00007f4317e00bd8, RBP=0x00007f4317e00c40, RSI=0x00000000f3e374d8, RDI=0x00000000c0699708
+R8 =0x00007f43218bd680, R9 =0x0000000000000000, R10=0x0000000000008000, R11=0x00007f43220c0f80
+R12=0x00000000f3e374d8, R13=0x0000000000820001, R14=0x00007f431c16de70, R15=0x00007f431c16ded8
+RIP=0x00000000c0002d78, EFLAGS=0x0000000000010246, CSGSFS=0x0000000000000033, ERR=0x0000000000000015
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f4317e00bd8)
+0x00007f4317e00bd8:   00007f432139312d 00007f431c019928
+0x00007f4317e00be8:   0000000000000068 00007f431c16de00
+0x00007f4317e00bf8:   00007f43080008c0 00000000fc1e0020
+0x00007f4317e00c08:   0000000000001000 0000000000000000
+0x00007f4317e00c18:   00007f431c16de70 00000000fc1e0300
+0x00007f4317e00c28:   0000000000000000 00007f43218bd680
+0x00007f4317e00c38:   00007f431c16ded8 00007f4317e00cc0
+0x00007f4317e00c48:   00007f43213928b8 0000000000000000
+0x00007f4317e00c58:   00007f431c019950 00007f431c16def0
+0x00007f4317e00c68:   00007f431c16dee0 00007f4317e00cc0
+0x00007f4317e00c78:   00007f432112d732 00007f431c019900
+0x00007f4317e00c88:   00007f431c16de70 00007f431c017ec0
+0x00007f4317e00c98:   00000000c010afd0 00007f431c0157e0
+0x00007f4317e00ca8:   00000000c010afd0 00007f4317f82858
+0x00007f4317e00cb8:   00007f4317f8b9ea 00007f4317e00d60
+0x00007f4317e00cc8:   00007f4320f62360 00007f43218d8ed3
+0x00007f4317e00cd8:   00000000c0108ff0 00007f431c0157e0
+0x00007f4317e00ce8:   00007f431c013620 00007f431c0157e0
+0x00007f4317e00cf8:   00000000c0108ff0 00007f4317f82855
+0x00007f4317e00d08:   00000000c133d4c0 00007f431c16de70
+0x00007f4317e00d18:   00007f4317f82858 00000000c010afd0
+0x00007f4317e00d28:   00007f4317f82849 00007f431c16de70
+0x00007f4317e00d38:   00007f431c16de70 00007f431c049380
+0x00007f4317e00d48:   00007f43214e8be8 00007f431c018800
+0x00007f4317e00d58:   00007f43218d8cd2 00007f4317e00d80
+0x00007f4317e00d68:   00007f4321395cff 0000000000000001
+0x00007f4317e00d78:   00007f431c049380 00007f4317e00e60
+0x00007f4317e00d88:   00007f43210cebe2 00007f431c019900
+0x00007f4317e00d98:   00007f431c018fb8 00007f431c018be0
+0x00007f4317e00da8:   00007f431c018bd0 00007f431c018ba0
+0x00007f4317e00db8:   0000000000000000 0000000000000000
+0x00007f4317e00dc8:   0000000000000000 00007f431c018800 
+
+Instructions: (pc=0x00000000c0002d78)
+0x00000000c0002d58:   e0 b6 0c 1c 43 7f 00 00 a9 b8 1b 18 43 7f 00 00
+0x00000000c0002d68:   00 00 00 00 00 00 00 00 a0 33 19 18 43 7f 00 00
+0x00000000c0002d78:   01 00 00 00 00 00 00 00 40 02 00 c0 00 00 00 00
+0x00000000c0002d88:   f0 9a 89 21 43 7f 00 00 10 00 00 00 38 00 00 00 
+
+Register to memory mapping:
+
+RAX=0x00000000c0697bf0 is an oop
+{constant pool} 
+ - klass: {other class}
+ - holder: 0x00000000c0699978
+ - cache: 0x00000000c0699be0
+ -   1 :  : klass_index=30 name_and_type_index=168
+ -   2 :  : klass_index=30 name_and_type_index=169
+ -   3 :  : klass_index=30 name_and_type_index=170
+ -   4 :  : klass_index=30 name_and_type_index=171
+ -   5 :  : klass_index=30 name_and_type_index=172
+ -   6 :  : klass_index=30 name_and_type_index=173
+ -   7 :  : 'java/lang/Class' {0xc0019378}
+ -   8 :  : 'java/lang/reflect/ParameterizedType' {0xc06b6cc0}
+ -   9 :  : klass_index=8 name_and_type_index=176
+ -  10 :  : 'java/lang/reflect/TypeVariable' {0xc069a5f0}
+ -  11 :  : klass_index=10 name_and_type_index=178
+ -  12 :  : klass_index=30 name_and_type_index=179
+ -  13 :  : 'java/lang/Object' {0xc0002d78}
+ -  14 :  : 'java/lang/reflect/WildcardType' {0xc06b4640}
+ -  15 :  : klass_index=14 name_and_type_index=182
+ -  16 :  : 'java/lang/reflect/GenericArrayType' {0xc06bc2e0}
+ -  17 :  : klass_index=16 name_and_type_index=184
+ -  18 :  : klass_index=185 name_and_type_index=186
+ -  19 :  : klass_index=13 name_and_type_index=187
+ -  20 :  : 'java/lang/IllegalArgumentException'
+ -  21 :  : 'java/lang/StringBuilder'
+ -  22 :  : klass_index=21 name_and_type_index=190
+ -  23 :  : 

@@ -24,6 +24,19 @@
                             $( "#resource" ).dialog( "open" );
                         });
             });
+            $(function(){
+                $("#invitation").dialog({
+                    autoOpen: false,
+                    height:200,
+                    width: 300,
+                    modal: true
+                });
+                $( "#send_invite" )
+                        .button()
+                        .click(function() {
+                            $( "#invitation" ).dialog( "open" );
+                        });
+            });
         </script>
 	</head>
 	<body>
@@ -56,7 +69,7 @@
                         <g:hiddenField name="unSubId" value="${subscribed.id}"></g:hiddenField>
                         <g:submitButton name="unsubscribe" value="unsubscribe"></g:submitButton>
                     </g:form>
-
+                    <button id="send_invite">Send Invitation</button>
                 </g:else>
             </h1>
 			<g:if test="${flash.message}">
@@ -218,6 +231,14 @@
                      %{--</g:uploadForm>--}%
                 %{--</div>--}%
 
+        </div>
+        <div id="invitation">
+            <g:form controller="misc" action="sendInvite">
+                <g:hiddenField name="topic" value="${topicInstance?.id}"></g:hiddenField>
+                E-Mail Id: <g:textField name="email"></g:textField>
+                <br>
+                <g:submitButton name="Send Invite" value="Send Invite"></g:submitButton>
+            </g:form>
         </div>
 	</body>
 </html>

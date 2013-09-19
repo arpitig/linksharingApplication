@@ -135,18 +135,19 @@ class ResourceController {
         }else{
             def upload = request.getFile("uploadFile")
 //            render "File Name: ${upload.originalFilename} Type: ${upload.contentType}"
+
             upload.transferTo(new File("doc/${upload.originalFilename}"))
             r = new DocumentResource(title: params.title, summary: params.summary, owner: User.load(session.user.id), topic: Topic.load(params.topic), fileName: upload.originalFilename, contentType: upload.contentType)
             r.save(failOnError: true)
 //            render "Document uploaded succsessfully"
         }
-        flash.id=params.topic
-        redirect(controller: 'topic', action: 'show')
+        flash.message="Resource added successfully"
+        redirect(controller: 'topic', action: 'show', params: ['id':params.topic])
     }
 
     def downloadFile() {
 
-        def file = new File("doc/LinuxIntro(1).ppt")
+        def file = new File("doc/${params.id}")
 
         if (file.exists()) {
             response.setContentType("application/octet-stream")
