@@ -99,8 +99,12 @@
                     <td><g:textField name="email"/></td>
                 </tr>
                 <tr>
-                    <td>Enter Name</td>
-                    <td><g:textField name="firstName" /><g:textField name="lastName" /></td>
+                    <td>Enter FirstName</td>
+                    <td><g:textField name="firstName" /></td>
+                </tr>
+                <tr>
+                    <td>Enter LastName</td>
+                    <td><g:textField name="lastName" /></td>
                 </tr>
                 <tr>
                     <td>Enter Password </td>
